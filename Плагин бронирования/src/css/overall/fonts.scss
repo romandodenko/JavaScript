@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'AfjatTrends';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('AfjatTrends-Light'),
+    url("../../fonts/AfjatTrends-Light.woff2") format("woff2")
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('FiraSans-Light'),
+    url("../../fonts/FiraSans-Light.woff2") format("woff2")
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: local('FiraSans-LightItalic'),
+    url("../../fonts/FiraSans-LightItalic.woff2") format("woff2")
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('FiraSans-Medium'),
+    url("../../fonts/FiraSans-Medium.woff2") format("woff2")
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('FiraSans-Regular'),
+    url("../../fonts/FiraSans-Regular.woff2") format("woff2")
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="./fonts/AfjatTrends-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/FiraSans-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/FiraSans-LightItalic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/FiraSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/FiraSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./resources/airdatepicker-calendar/air-datepicker.css">
+  <link rel="stylesheet" href="./css/main-min.css">
+  <script defer src="./resources/airdatepicker-calendar/air-datepicker.js"></script>
+  <script defer src="./js/main.js"></script>
+  <title>Лукоморье плагин бронирования</title>
+</head>
+
+<body>
+  <div class="page">
+    <header class="header"></header>
+    <main>
+      <section class="filter">
+        <div class="filter__top">
+          <div class="filter__container container">
+            <h2 class="filter__subtitle cl-anim-2 title-v12">
+              Забронировать номер
+            </h2>
+            <div class="filter__filter cl-anim-1 filter-block">
+              <div class="filter-block__items">
+                <div class="filter-block__item">
+                  <span class="filter-block__icon">
+                    <svg width="24" height="24">
+                      <use xlink:href="./img/svg/sprites.svg#filter-icon-1"></use>
+                    </svg>
+                  </span>
+                  <div class="filter-block__texts">
+                    <label class="filter-block__label" for="arrivalDate">
+                      <span class="filter-block__span">
+                        дата заезда:
+                      </span>
+                      <input class="filter-block__input arrival-date" type="text" name="Дата заезда" id="arrivalDate"
+                        placeholder="31.01.23" aria-label="Дата заезда">
+                    </label>
+                  </div>
+                </div>
+                <div class="filter-block__item">
+                  <span class="filter-block__icon">
+                    <svg width="24" height="24">
+                      <use xlink:href="./img/svg/sprites.svg#filter-icon-2"></use>
+                    </svg>
+                  </span>
+                  <div class="filter-block__texts">
+                    <label class="filter-block__label" for="dateOfDeparture">
+                      <span class="filter-block__span">
+                        дата выезда:
+                      </span>
+                      <input class="filter-block__input date-of-departure" type="text" name="Дата выезда"
+                        id="dateOfDeparture" placeholder="11.02.23" aria-label="Дата выезда">
+                    </label>
+                  </div>
+                </div>
+                <div class="filter-block__item">
+                  <span class="filter-block__icon">
+                    <svg width="24" height="24">
+                      <use xlink:href="./img/svg/sprites.svg#filter-icon-3"></use>
+                    </svg>
+                  </span>
+                  <div class="filter-block__texts">
+                    <label class="filter-block__label" for="arrivalDate">
+                      <span class="filter-block__span">
+                        гости:
+                      </span>
+                      <input class="filter-block__input number-of-guests" type="number" name="Число гостей"
+                        id="arrivalDate" placeholder="1 взрослый" aria-label="Число гостей">
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <button class="filter-block__search" aria-label="Начать поиск">
+                <svg width="22" height="22">
+                  <use xlink:href="./img/svg/sprites.svg#filter-icon-search"></use>
+                </svg>
+                Поиск
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul class="filter__list filter-list" aria-label="Список фильтра"></ul>
+        <div class="wrapper-show-buttons">
+          <button class="wrapper-show-buttons__button wrapper-show-buttons__button_show button-v1"
+            aria-label="Показать ещё номера">
+            <span>
+              <svg width="11" height="7">
+                <use xlink:href="./img/svg/sprites.svg#arrow"></use>
+              </svg>
+            </span>
+            <span>Показать ещё</span>
+          </button>
+          <button class="wrapper-show-buttons__button wrapper-show-buttons__button_collapse button-v1"
+            aria-label="Свернуть список">
+            <span>
+              <svg width="11" height="7">
+                <use xlink:href="./img/svg/sprites.svg#arrow"></use>
+              </svg>
+            </span>
+            <span>Свернуть</span>
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>

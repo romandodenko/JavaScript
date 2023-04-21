@@ -1,0 +1,62 @@
+:root {
+  // Шрифты
+  --font-main: "AfjatTrends", sans-serif; // главный шрифт на странице
+
+  // Контейнер
+  --container-width: 1500px; // ширина контейнера
+  --container-step: 20px; // падинги по бокам на пк
+  --container-step-tablet: 15px; // падинги по бокам на планшетах
+  --container-step-mobile: 10px; // падинги по бокам на мобилках
+  --container: calc(var(--container-width) + (var(--container-step) * 2)); // сам контейнер
+
+  // Цвета
+  --background-page: #fff; // бекграунд страницы
+
+  --white: #FFFFFF;
+  --light: #F5F5F5;
+  --main: #4A505A;
+  --l-dark: #4F4F4F;
+  --d-dark: #16191E;
+  --gray: #ABABAB;
+  --gray-2: #F9F9F9;
+  --gray-3: #F2F2F2;
+  --gray-4: #A3ACAB;
+  --gray-5: #929C9B;
+  --gray-6: #F4F4F4;
+  --black: #000000;
+  --dark: #3A4C49;
+  --dark2: #363636;
+  --l-green: #29B297;
+  --d-pink: #C9AE9D;
+  --d2-pink: #BD897E;
+
+  --hover: #29B297; // цвет при ховере
+  --active: #1d967e; // цвет при активе
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--container-step);
+
+  @media (max-width: 991px) {
+    padding: 0 var(--container-step-tablet);
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 var(--container-step-mobile);
+  }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-main);
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--background-page);
+}
+
+main {
+  flex: 1 1 auto;
+}

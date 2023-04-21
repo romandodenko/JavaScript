@@ -1,0 +1,764 @@
+.filter {
+  padding: 80px 0;
+
+  @media (max-width: 991px) {
+    padding: 60px 0;
+  }
+
+  @media (max-width: 600px) {
+    padding: 40px 0;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 96px;
+
+    @media (max-width: 1440px) {
+      margin-bottom: 100px;
+    }
+
+    @media (max-width: 1220px) {
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 991px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__top {
+    &.filter-margin {
+      &:not(:last-child) {
+        margin-bottom: 80px;
+
+        @media (max-width: 1220px) {
+          margin-bottom: 60px;
+        }
+
+        @media (max-width: 991px) {
+          margin-bottom: 40px;
+        }
+
+        @media (max-width: 600px) {}
+      }
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+
+      @media (max-width: 991px) {
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 600px) {}
+    }
+  }
+
+  &__container {
+    max-width: 1527px;
+    padding: 0 44px;
+
+    @media (max-width: 991px) {
+      padding: 0 20px;
+    }
+
+    @media (max-width: 600px) {
+      padding: 0 10px;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+
+      @media (max-width: 600px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__filter {}
+}
+
+.air-datepicker-body--day-name {
+  color: var(--l-green);
+}
+
+.filter-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 600px) {
+    gap: 16px;
+  }
+
+  &__items {
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 42px;
+    background-color: var(--white);
+    border: 1px solid rgba(58, 58, 58, 0.32);
+    border-radius: 92px;
+
+    @media (max-width: 991px) {
+      padding: 11.5px 15px;
+      min-height: 35px;
+      gap: 16px;
+    }
+
+    @media (max-width: 450px) {
+      justify-content: center;
+      padding: 15px 25px;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex: 0 0 150px;
+
+    @media (max-width: 600px) {
+      gap: 10px;
+      flex: 0 0 105px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    flex: 0 0 24px;
+    height: 24px;
+
+    @media (max-width: 600px) {
+      flex: 0 0 20px;
+      height: 20px;
+    }
+
+    & svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__texts {
+    flex: 0 1 100%;
+  }
+
+  &__span {
+    display: block;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: -0.04em;
+    color: var(--main);
+  }
+
+  &__label {
+    display: block;
+    width: 100%;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: var(--main);
+    height: 20px;
+
+    @media (max-width: 991px) {
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 10px 20px;
+    min-width: 232px;
+    min-height: 64px;
+    width: fit-content;
+    background: var(--l-green);
+    border-radius: 32px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out;
+
+    @media (max-width: 991px) {
+      min-width: 115px;
+      min-height: 55px;
+      font-size: 16px;
+      line-height: 16px;
+      gap: 10px;
+    }
+
+    @media (max-width: 600px) {
+      min-width: 100px;
+      min-height: 50px;
+      font-size: 14px;
+      line-height: 14px;
+      gap: 8px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: var(--white);
+        color: var(--hover);
+
+        & svg {
+          fill: var(--hover);
+        }
+      }
+    }
+
+    &:active {
+      background-color: var(--white);
+      color: var(--active);
+      transition-duration: .1s;
+
+      & svg {
+        fill: var(--active);
+        transition-duration: .1s;
+      }
+    }
+
+    & svg {
+      flex-shrink: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      object-position: center;
+      fill: var(--white);
+      transition: fill .3s ease-in-out;
+
+      @media (max-width: 991px) {
+        width: 18px;
+        height: 18px;
+      }
+
+      @media (max-width: 600px) {}
+    }
+  }
+}
+
+.filter-list {
+  display: none;
+  grid-template: auto / repeat(3, 1fr);
+  gap: 80px 40px;
+  max-width: 1527px;
+  padding: 0 44px;
+  margin: 0 auto;
+
+  @media (max-width: 1220px) {
+    gap: 60px 20px;
+  }
+
+  @media (max-width: 991px) {
+    padding: 0 20px;
+    grid-template: auto / repeat(2, 1fr);
+    gap: 40px 20px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 10px;
+    grid-template: auto / 1fr;
+  }
+
+  &.filter-margin {
+    &:not(:last-child) {
+      margin-bottom: 80px;
+
+      @media (max-width: 1220px) {
+        margin-bottom: 60px;
+      }
+
+      @media (max-width: 991px) {
+        margin-bottom: 40px;
+      }
+
+      @media (max-width: 600px) {}
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(n + 7) {
+      display: none;
+    }
+
+    &.is-visible {
+      display: flex;
+    }
+  }
+
+  &__title {
+    font-family: "AfjatTrends";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    letter-spacing: 0;
+
+    @media (max-width: 1220px) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @media (max-width: 600px) {}
+    }
+  }
+
+  &__image {
+    flex-shrink: 0;
+    height: 313px;
+
+    @media (max-width: 991px) {
+      height: 280px;
+    }
+
+    @media (max-width: 600px) {
+      height: 240px;
+    }
+
+    & img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__price {
+    font-family: "AfjatTrends";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    letter-spacing: 0;
+
+    @media (max-width: 1220px) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: -0.04em;
+    color: var(--white);
+
+    @media (max-width: 991px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    height: 100%;
+    flex: 0 1 100%;
+
+    @media (max-width: 991px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @media (max-width: 600px) {}
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--white);
+    min-width: 155px;
+    text-transform: uppercase;
+    min-height: 46px;
+    width: fit-content;
+    padding-right: 30px;
+    transition: color .3s ease-in-out;
+
+    @media (max-width: 600px) {
+      min-height: 38px;
+      min-width: 135px;
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--white);
+
+        & span {
+          &:first-child {
+            border-radius: 23px;
+            width: 100%;
+
+            & svg {
+              transform: rotate(90deg);
+            }
+          }
+        }
+      }
+    }
+
+    & span {
+      z-index: 2;
+      display: block;
+
+      &:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background-color: var(--l-green);
+        transition: border-radius .3s ease-in-out .1s, width .3s ease-in-out .1s;
+
+        @media (max-width: 600px) {
+          width: 38px;
+          height: 38px;
+        }
+
+        & svg {
+          position: absolute;
+          top: 17px;
+          left: 16px;
+          display: block;
+          width: 17px;
+          height: 11px;
+          object-fit: contain;
+          fill: var(--white);
+          object-position: center;
+          transform: rotate(-90deg);
+          transition: transform .3s ease-in-out .1s;
+
+          @media (max-width: 600px) {
+            top: 15px;
+            left: 14px;
+            width: 12px;
+            height: 9px;
+          }
+        }
+      }
+
+      &:last-child {
+        padding-left: 55px;
+
+        @media (max-width: 600px) {
+          padding-left: 42px;
+        }
+      }
+    }
+  }
+}
+
+.filter-error-page {
+  max-width: 501px;
+  margin: 0 auto;
+
+  &__title {
+    font-family: 'AfjatTrends';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    text-align: center;
+
+    @media (max-width: 991px) {
+      font-size: 36px;
+      line-height: 36px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 26px;
+      line-height: 26px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    text-align: center;
+
+    @media (max-width: 991px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 80px;
+
+      @media (max-width: 1220px) {
+        margin-bottom: 60px;
+      }
+
+      @media (max-width: 991px) {
+        margin-bottom: 40px;
+      }
+
+      @media (max-width: 600px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 154px;
+    height: 154px;
+    margin: 0 auto;
+
+    @media (max-width: 1440px) {
+      width: 128px;
+      height: 128px;
+    }
+
+    @media (max-width: 1220px) {
+      width: 100px;
+      height: 100px;
+    }
+
+    @media (max-width: 991px) {
+      width: 80px;
+      height: 80px;
+    }
+
+    @media (max-width: 600px) {
+      width: 60px;
+      height: 60px;
+    }
+
+    & svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
+
+.wrapper-show-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &__button {
+    position: relative;
+    display: none;
+    align-items: center;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--white);
+    min-width: 155px;
+    text-transform: uppercase;
+    min-height: 46px;
+    width: fit-content;
+    padding-right: 30px;
+    transition: color .3s ease-in-out;
+
+    @media (max-width: 600px) {
+      min-height: 38px;
+      min-width: 135px;
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--white);
+
+        & span {
+          &:first-child {
+            border-radius: 23px;
+            width: 100%;
+
+            & svg {
+              transform: rotate(90deg);
+            }
+          }
+        }
+      }
+    }
+
+    & span {
+      z-index: 2;
+      display: block;
+
+      &:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background-color: var(--l-green);
+        transition: border-radius .3s ease-in-out .1s, width .3s ease-in-out .1s;
+
+        @media (max-width: 600px) {
+          width: 38px;
+          height: 38px;
+        }
+
+        & svg {
+          position: absolute;
+          top: 17px;
+          left: 16px;
+          display: block;
+          width: 17px;
+          height: 11px;
+          object-fit: contain;
+          fill: var(--white);
+          object-position: center;
+          transform: rotate(-90deg);
+          transition: transform .3s ease-in-out .1s;
+
+          @media (max-width: 600px) {
+            top: 15px;
+            left: 14px;
+            width: 12px;
+            height: 9px;
+          }
+        }
+      }
+
+      &:last-child {
+        padding-left: 55px;
+
+        @media (max-width: 600px) {
+          padding-left: 42px;
+        }
+      }
+    }
+
+    &.is-hidden {
+      display: none;
+    }
+
+    &.is-visible {
+      display: flex;
+    }
+
+    &_show {}
+
+    &_collapse {}
+  }
+}
