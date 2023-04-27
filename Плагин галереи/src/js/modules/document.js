@@ -10,6 +10,12 @@ const wrapperGalleryNext = document.querySelector(".wrapper-gallery-next"); // �
 
 const wrapperGalleryPrev = document.querySelector(".wrapper-gallery-prev"); // Кнопка листающая фотографии назад
 
+const wrapperGalleryNums = document.querySelector(".wrapper-gallery-nums");
+
+const wrapperGalleryNumsActive = document.querySelector(".wrapper-gallery-nums__active");
+
+const wrapperGalleryNumsAll = document.querySelector(".wrapper-gallery-nums__all");
+
 const wrapperGallery = document.querySelector(".gal-init");
 
 if (innerGalleryInit) {
@@ -26,6 +32,10 @@ if (innerGalleryInit) {
       const wrapperGalleryLength = wrapperGallery.querySelectorAll("img").length;
 
       const wrapperGalleryImg = wrapperGallery.querySelectorAll("img");
+
+      const wrapperGalleryImgLength = wrapperGallery.querySelectorAll("img").length;
+
+      wrapperGalleryNumsAll.innerHTML = wrapperGalleryImgLength;
 
       if (wrapperGalleryLength != 0) { // Проверяем есть ли картинки, если они есть, то галерея инициализируется
 
@@ -49,10 +59,13 @@ if (innerGalleryInit) {
           wrapperGalleryContent.append(galleryImg); // Добавляем картинку в оболочку галереи где лежат картинки
         })
 
-        wrapperGalleryContent.querySelectorAll("img").forEach(function (e) {
+        wrapperGalleryContent.querySelectorAll("img").forEach(function (e, i) {
           let src = e.getAttribute("src");
           if (src === galleryInitImgSrc) {
             e.classList.add("gallery-active-photo");
+            if (e.classList.contains("gallery-active-photo")) {
+              wrapperGalleryNumsActive.innerHTML = i + 1;
+            }
             let galleryItemActive = document.querySelectorAll(".gallery-active-photo");
             if (galleryItemActive[0].previousElementSibling) {
               wrapperGalleryPrev.classList.remove("disabled");
@@ -73,6 +86,8 @@ if (innerGalleryInit) {
 
     if (elementInteractive.closest(".wrapper-gallery__exit")) { // Закрывает галерею по крестику
 
+      document.body.style.overflow = "";
+
       innerGallery.classList.remove("active"); // Удаляет активный класс у галереи
 
       wrapperGalleryContent.querySelectorAll("img").forEach(function (e) { // Удаляем все картинки, тем самым очищаем галерею
@@ -87,6 +102,8 @@ if (innerGalleryInit) {
     }
 
     if (elementInteractive.closest(".wrapper-gallery__close")) { // Закрывает галерею при нажатии вне крестика
+
+      document.body.style.overflow = "";
 
       innerGallery.classList.remove("active"); // Удаляет активный класс у галереи
 
@@ -110,9 +127,13 @@ if (innerGalleryInit) {
       if (galleryActivePhotoLength > 1) {
         if (galleryActivePhotos[1].previousElementSibling) {
           galleryActivePhotos[1].previousElementSibling.classList.remove("gallery-active-photo");
-          wrapperGalleryPrev.classList.remove("disabled");
+          wrapperGalleryContent.querySelectorAll("img").forEach(function (e, i) {
+            if (e.classList.contains("gallery-active-photo")) {
+              wrapperGalleryNumsActive.innerHTML = i + 1;
+            }
+          })
           if (galleryActivePhotos[1].nextElementSibling) {
-            wrapperGalleryNext.classList.remove("disabled");
+            wrapperGalleryPrev.classList.remove("disabled");
           } else {
             wrapperGalleryNext.classList.add("disabled");
           }
@@ -129,14 +150,20 @@ if (innerGalleryInit) {
       if (galleryActivePhotoLength > 1) {
         if (galleryActivePhotos[0].nextElementSibling) {
           galleryActivePhotos[0].nextElementSibling.classList.remove("gallery-active-photo");
+          wrapperGalleryContent.querySelectorAll("img").forEach(function (e, i) {
+            if (e.classList.contains("gallery-active-photo")) {
+              wrapperGalleryNumsActive.innerHTML = i + 1;
+            }
+          })
           wrapperGalleryNext.classList.remove("disabled");
-           if (galleryActivePhotos[0].previousElementSibling) {
-            wrapperGalleryPrev.classList.remove("disabled");
+          if (galleryActivePhotos[0].previousElementSibling) {
+            wrapperGalleryNext.classList.remove("disabled");
           } else {
             wrapperGalleryPrev.classList.add("disabled");
           }
         }
       }
-    } 
+
+    }
   })
 }
