@@ -135,6 +135,7 @@ if (innerGalleryInit) {
           if (galleryActivePhotos[1].nextElementSibling) {
             wrapperGalleryPrev.classList.remove("disabled");
           } else {
+            wrapperGalleryPrev.classList.remove("disabled");
             wrapperGalleryNext.classList.add("disabled");
           }
         }
