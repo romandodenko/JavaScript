@@ -1,0 +1,12 @@
+ErrorDocument 404 http://домен сайта/файл с ошибкой.html
+
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME}/ -d
+RewriteCond %{SCRIPT_FILENAME}.html !-f
+RewriteRule [^/]$ %{REQUEST_URI}/ [R=301,L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+RewriteCond %{SCRIPT_FILENAME}.html -f
+RewriteRule [^/]$ %{REQUEST_URI}.html [QSA,L]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]

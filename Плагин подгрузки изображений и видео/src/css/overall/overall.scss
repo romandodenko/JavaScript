@@ -1,0 +1,117 @@
+:root {
+  // Шрифты
+  --font-main: "Roboto", sans-serif; // главный шрифт на странице
+
+  // Контейнер
+  --container-width: 1440px; // ширина контейнера
+  --container-step: 20px; // падинги по бокам на пк
+  --container-step-tablet: 15px; // падинги по бокам на планшетах
+  --container-step-mobile: 10px; // падинги по бокам на мобилках
+  --container: calc(var(--container-width) + (var(--container-step) * 2)); // сам контейнер
+
+  // Цвета
+  --background-page: #ffffff; // бекграунд страницы
+  --purple: #7B68EE;
+  --main: #000000;
+  --black: #000000;
+  --white: #ffffff;
+
+  --hover: #6550e0; // цвет при ховере
+  --active: #4169E1; // цвет при активе
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--container-step);
+
+  @media (max-width: 991px) {
+    padding: 0 var(--container-step-tablet);
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 var(--container-step-mobile);
+  }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-main);
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--background-page);
+}
+
+main {
+  flex: 1 1 auto;
+
+  &:not(:last-child) {
+    margin-bottom: 100px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.tt-64-34 {
+  font-size: 64px;
+  line-height: 1.1;
+  font-weight: 700;
+  @media (max-width: 1440px) {
+    font-size: 52px;
+  }
+
+  @media (max-width: 991px) {
+    font-size: 44px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 34px;
+  }
+}
+
+.tx-16 {
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.but {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--white);
+  background-color: var(--purple);
+  width: fit-content;
+  min-height: 50px;
+  min-width: 160px;
+  transition: background-color .3s ease-in-out;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--hover);
+    }
+  }
+
+  &:focus-visible {
+    background-color: var(--hover);
+  }
+
+  &:active {
+    background-color: var(--active);
+    transition-duration: .1s;
+  }
+}

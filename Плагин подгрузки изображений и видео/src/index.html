@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Плагин подгрузки изображений и видео">
+  <meta property="og:site_name" content="Плагин подгрузки изображений и видео при скролле сайта">
+  <meta name="twitter:title" content="Плагин подгрузки изображений и видео">
+  <meta name="twitter:description" content="Плагин подгрузки изображений и видео при скролле сайта">
+  <meta name="description" content="Плагин подгрузки изображений и видео при скролле сайта">
+  <title>Плагин подгрузки изображений и видео</title>
+  <link rel="shortcut icon" href="./img/favicon.png">
+  <link rel="preload" href="./fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./css/main-min.css">
+  <script defer src="./js/main.js"></script>
+</head>
+
+<body>
+  <div class="page">
+    <!-- Начало header -->
+    <header class="header">
+      <div class="container">
+        <button class="burger" aria-label="Скрытое меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="header__menu">
+          <nav class="nav" aria-label="Навигация сайта">
+            <ul class="nav__list" aria-label="Список навигации сайта">
+              <li class="nav__item">
+                <a class="nav__link tx-16" href="#!" aria-label="Ссылка 1">
+                  Ссылка 1
+                </a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link tx-16" href="#!" aria-label="Ссылка 2">
+                  Ссылка 2
+                </a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link tx-16" href="#!" aria-label="Ссылка 3">
+                  Ссылка 3
+                </a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link tx-16" href="#!" aria-label="Ссылка 4">
+                  Ссылка 4
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <button class="header__exit-menu" aria-label="Закрыть скрытое меню"></button>
+        </div>
+      </div>
+    </header>
+    <!-- Конец header -->
+    <main>
+      <!-- Начало hero -->
+      <section class="hero rd-upload">
+        <div class="hero__container container">
+          <div class="hero__image">
+            <img src="." data-rd-image="./img/image-1.jpg" data-rd-image-webp="./img/image-1.webp" width="336"
+              height="336" alt="Плагин подгрузки изображений и видео">
+          </div>
+          <div class="hero__descr">
+            <h1 class="hero__title tt-64-34">
+              Плагин подгрузки изображений и видео
+            </h1>
+            <div class="hero__texts">
+              <p class="hero__text tx-16">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe perferendis maxime quod autem sequi ipsa
+                sit! Temporibus distinctio vel beatae facere quod doloribus accusamus id, velit veniam nemo pariatur
+                illo!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Конец hero -->
+
+      <!-- Начало hero -->
+      <section class="hero rd-upload">
+        <div class="container">
+          <h2 class="hero__title tt-64-34">
+            Заголовок
+          </h2>
+          <div class="hero__descr hero__descr_margin">
+            <div class="hero__texts">
+              <p class="hero__text tx-16">
+                Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Коварный снова
+                повстречался раз алфавит пустился безорфографичный оксмокс маленькая путь, все родного, свой одна но
+                журчит, точках даже мир текст!
+              </p>
+              <p class="hero__text tx-16">
+                Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Коварный снова
+                повстречался раз алфавит пустился безорфографичный оксмокс маленькая путь, все родного, свой одна но
+                журчит, точках даже мир текст!
+              </p>
+            </div>
+          </div>
+          <ul class="hero__images" aria-label="Список изображений">
+            <li class="hero__image hero__image_more-height">
+              <img src="." data-rd-image="./img/image-2.jpg" data-rd-image-webp="./img/image-2.webp" width="336"
+                height="336" alt="Плагин подгрузки изображений и видео">
+            </li>
+            <li class="hero__image hero__image_more-height">
+              <img src="." data-rd-image="./img/image-3.jpg" data-rd-image-webp="./img/image-3.webp" width="336"
+                height="336" alt="Плагин подгрузки изображений и видео">
+            </li>
+            <li class="hero__image hero__image_more-height">
+              <img src="." data-rd-image="./img/image-4.jpg" data-rd-image-webp="./img/image-4.webp" width="336"
+                height="336" alt="Плагин подгрузки изображений и видео">
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Конец hero -->
+
+      <!-- Начало hero -->
+      <section class="hero rd-upload">
+        <div class="container">
+          <h2 class="hero__title tt-64-34">
+            Заголовок
+          </h2>
+          <div class="hero__descr hero__descr_margin">
+            <div class="hero__texts">
+              <p class="hero__text tx-16">
+                Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Коварный снова
+                повстречался раз алфавит пустился безорфографичный оксмокс маленькая путь, все родного, свой одна но
+                журчит, точках даже мир текст!
+              </p>
+              <p class="hero__text tx-16">
+                Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Коварный снова
+                повстречался раз алфавит пустился безорфографичный оксмокс маленькая путь, все родного, свой одна но
+                журчит, точках даже мир текст!
+              </p>
+            </div>
+          </div>
+          <div class="hero__video">
+            <video src="." controls playsinline preload="metadata" muted width="100" height="100" poster="."
+              data-rd-video="./video/video-1.mp4" data-rd-image="./img/video-poster-1.jpg"
+              data-rd-image-webp="./img/video-poster-1.webp" aria-label="Смотреть видео"></video>
+          </div>
+        </div>
+      </section>
+      <!-- Конец hero -->
+
+      <!-- Начало hero -->
+      <section class="hero rd-upload">
+        <div class="hero__container hero__container_grid container">
+          <div class="hero__descr">
+            <h2 class="hero__title tt-64-34">
+              Заголовок
+            </h2>
+            <div class="hero__texts">
+              <p class="hero__text tx-16">
+                Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Коварный снова
+                повстречался раз алфавит пустился безорфографичный оксмокс маленькая путь, все родного, свой одна но
+                журчит, точках даже мир текст!
+              </p>
+              <p class="hero__text tx-16">
+                Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Коварный снова
+                повстречался раз алфавит пустился безорфографичный оксмокс маленькая путь, все родного, свой одна но
+                журчит, точках даже мир текст!
+              </p>
+            </div>
+          </div>
+          <ul class="hero__images hero__images_column-two" aria-label="Список изображений">
+            <li class="hero__image hero__image_more-height">
+              <img src="." data-rd-image="./img/image-5.jpg" data-rd-image-webp="./img/image-5.webp" width="336"
+                height="336" alt="Плагин подгрузки изображений и видео">
+            </li>
+            <li class="hero__image hero__image_more-height">
+              <img src="." data-rd-image="./img/image-6.jpg" data-rd-image-webp="./img/image-6.webp" width="336"
+                height="336" alt="Плагин подгрузки изображений и видео">
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- Конец hero -->
+
+      <!-- Начало hero -->
+      <section class="hero rd-upload">
+        <div class="container">
+          <h2 class="hero__title tt-64-34">
+            Заголовок
+          </h2>
+          <div class="hero__descr hero__descr_margin">
+            <div class="hero__texts">
+              <p class="hero__text tx-16">
+                Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Коварный снова
+                повстречался раз алфавит пустился безорфографичный оксмокс маленькая путь, все родного, свой одна но
+                журчит, точках даже мир текст!
+              </p>
+              <p class="hero__text tx-16">
+                Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Коварный снова
+                повстречался раз алфавит пустился безорфографичный оксмокс маленькая путь, все родного, свой одна но
+                журчит, точках даже мир текст!
+              </p>
+            </div>
+          </div>
+          <div class="hero__video">
+            <video src="." controls playsinline preload="metadata" muted poster="." width="100" height="100"
+              data-rd-video="./video/video-2.mp4" data-rd-image="./img/video-poster-2.jpg"
+              data-rd-image-webp="./img/video-poster-2.webp" aria-label="Смотреть видео"></video>
+          </div>
+        </div>
+      </section>
+      <!-- Конец hero -->
+    </main>
+    <!-- Начало footer -->
+    <footer class="footer">
+      <div class="container">
+        <nav class="nav" aria-label="Навигация сайта">
+          <ul class="nav__list nav__list_footer" aria-label="Список навигации сайта">
+            <li class="nav__item">
+              <a class="nav__link tx-16" href="#!" aria-label="Ссылка 1">
+                Ссылка 1
+              </a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link tx-16" href="#!" aria-label="Ссылка 2">
+                Ссылка 2
+              </a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link tx-16" href="#!" aria-label="Ссылка 3">
+                Ссылка 3
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <!-- Конец footer -->
+  </div>
+</body>
+
+</html>
