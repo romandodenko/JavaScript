@@ -42,6 +42,12 @@
 
  // Плагин загрузки изображений и видео
 
+ // Примечание:
+ // Если используется фоновая картинка у элемента внутри rd-upload, то добавляем элементу класс rd-background и аттрибуты data-rd-image="картинка" data-rd-image-webp="картинка", должно получиться вот так:
+ // <div class="rd-background" data-rd-image="./img/image-1.jpg" data-rd-image-webp="./img/image-1.webp"></div>
+ // Если используется фоновая картинка у элемента rd-upload, то элементу rd-upload добавляем класс rd-background и аттрибуты data-rd-image="картинка" data-rd-image-webp="картинка", должно получиться вот так:
+ // <section class="hero rd-upload rd-background" data-rd-image="./img/image-1.jpg" data-rd-image-webp="./img/image-1.webp"></section>
+
  const rdUpload = document.querySelectorAll(".rd-upload");
 
  const body = document.body;
@@ -62,9 +68,40 @@
          if (!elementEntry.classList.contains("rd-load")) {
            elementEntry.classList.add("rd-load");
 
+           let rdUploadBackgroundImage = elementEntry.querySelectorAll(".rd-background")
+
            let rdUploadImage = elementEntry.querySelectorAll("img")
 
            let rdUploadVideo = elementEntry.querySelectorAll("video")
+
+           if (elementEntry.classList.contains("rd-background")) {
+
+             let elementEntryBackgroundImageDataImage = elementEntry.dataset.rdImage;
+             let elementEntryBackgroundImageDataWebp = elementEntry.dataset.rdImageWebp;
+
+             if (body.classList.contains("webp")) {
+               elementEntry.style.backgroundImage = `url(${elementEntryBackgroundImageDataWebp})`;
+             } else {
+              elementEntry.style.backgroundImage = `url(${elementEntryBackgroundImageDataImage})`; 
+             }
+
+           }
+
+           if (rdUploadBackgroundImage) {
+             rdUploadBackgroundImage.forEach(function (rdUploadBackgroundImage) {
+
+               let rdUploadBackgroundImageDataImage = rdUploadBackgroundImage.dataset.rdImage;
+               let rdUploadBackgroundImageDataWebp = rdUploadBackgroundImage.dataset.rdImageWebp;
+
+
+               if (body.classList.contains("webp")) {
+                 rdUploadBackgroundImage.style.backgroundImage = `url(${rdUploadBackgroundImageDataWebp})`;
+               } else {
+                 rdUploadBackgroundImage.style.backgroundImage = `url(${rdUploadBackgroundImageDataImage})`;
+               }
+
+             })
+           }
 
            if (rdUploadImage) {
              rdUploadImage.forEach(function (rdUploadImage) {
