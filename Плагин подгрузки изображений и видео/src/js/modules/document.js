@@ -47,6 +47,14 @@
  // <div class="rd-background" data-rd-image="./img/image-1.jpg" data-rd-image-webp="./img/image-1.webp"></div>
  // Если используется фоновая картинка у элемента rd-upload, то элементу rd-upload добавляем класс rd-background и аттрибуты data-rd-image="картинка" data-rd-image-webp="картинка", должно получиться вот так:
  // <section class="hero rd-upload rd-background" data-rd-image="./img/image-1.jpg" data-rd-image-webp="./img/image-1.webp"></section>
+ //  ----
+ //  Если нужно вставить картинку с помощью picture, то используем следующую разметку:
+ // <picture>
+ //<source media="(min-width: 991px)" srcset="" type="image/webp" data-rd-image="./img/picture-1.jpg" data-rd-image-webp="./img/picture-1.webp">
+ //<source media="(min-width: 601px)" srcset="" type="image/webp" data-rd-image="./img/picture-2.jpg" data-rd-image-webp="./img/picture-2.webp">
+ //<source media="(max-width: 600px)" srcset="" type="image/webp" data-rd-image="./img/picture-3.jpg" data-rd-image-webp="./img/picture-3.webp">
+ //<img src="." width="337" height="337" alt="Плагин подгрузки изображений и видео">
+ //</picture> 
 
  const rdUpload = document.querySelectorAll(".rd-upload");
 
@@ -68,11 +76,13 @@
          if (!elementEntry.classList.contains("rd-load")) {
            elementEntry.classList.add("rd-load");
 
-           let rdUploadBackgroundImage = elementEntry.querySelectorAll(".rd-background")
+           let rdUploadBackgroundImage = elementEntry.querySelectorAll(".rd-background");
 
-           let rdUploadImage = elementEntry.querySelectorAll("img")
+           let rdUploadImage = elementEntry.querySelectorAll("img");
 
-           let rdUploadVideo = elementEntry.querySelectorAll("video")
+           let rdUploadVideo = elementEntry.querySelectorAll("video");
+
+           let rdUploadPicture = elementEntry.querySelectorAll("picture");
 
            if (elementEntry.classList.contains("rd-background")) {
 
@@ -82,7 +92,7 @@
              if (body.classList.contains("webp")) {
                elementEntry.style.backgroundImage = `url(${elementEntryBackgroundImageDataWebp})`;
              } else {
-              elementEntry.style.backgroundImage = `url(${elementEntryBackgroundImageDataImage})`; 
+               elementEntry.style.backgroundImage = `url(${elementEntryBackgroundImageDataImage})`;
              }
 
            }
@@ -106,15 +116,38 @@
            if (rdUploadImage) {
              rdUploadImage.forEach(function (rdUploadImage) {
 
-               let rdUploadImageDataImage = rdUploadImage.dataset.rdImage;
-               let rdUploadImageDataWebp = rdUploadImage.dataset.rdImageWebp;
+               if (!rdUploadImage.closest("picture")) {
+                 let rdUploadImageDataImage = rdUploadImage.dataset.rdImage;
+                 let rdUploadImageDataWebp = rdUploadImage.dataset.rdImageWebp;
 
 
-               if (body.classList.contains("webp")) {
-                 rdUploadImage.setAttribute("src", `${rdUploadImageDataWebp}`);
-               } else {
-                 rdUploadImage.setAttribute("src", `${rdUploadImageDataImage}`);
+                 if (body.classList.contains("webp")) {
+                   rdUploadImage.setAttribute("src", `${rdUploadImageDataWebp}`);
+                 } else {
+                   rdUploadImage.setAttribute("src", `${rdUploadImageDataImage}`);
+                 }
                }
+
+             })
+           }
+
+           if (rdUploadPicture) {
+             rdUploadPicture.forEach(function (rdUploadPicture) {
+
+               let rdUploadPictureSource = rdUploadPicture.querySelectorAll("source");
+
+               rdUploadPictureSource.forEach(function (rdUploadPictureSource) {
+
+                 let rdUploadPictureSourceImage = rdUploadPictureSource.dataset.rdImage;
+                 let rdUploadPictureSourceWebp = rdUploadPictureSource.dataset.rdImageWebp;
+
+                 if (body.classList.contains("webp")) {
+                   rdUploadPictureSource.setAttribute("srcset", `${rdUploadPictureSourceWebp}`);
+                 } else {
+                   rdUploadPictureSource.setAttribute("srcset", `${rdUploadPictureSourceImage}`);
+                 }
+
+               })
 
              })
            }
