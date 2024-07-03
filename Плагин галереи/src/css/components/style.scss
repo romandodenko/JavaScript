@@ -312,12 +312,16 @@
 
   &__wrapper-button {
     position: absolute;
+    display: flex;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
     z-index: 5;
 
     &_prev {
-      top: 50%;
+      // top: 50%;
       left: 30px;
-      transform: translateY(-50%);
+      // transform: translateY(-50%);
 
       @media (max-width: 1220px) {
         left: 15px;
@@ -333,9 +337,10 @@
     }
 
     &_next {
-      top: 50.5%;
+      justify-content: flex-end;
+      // top: 50.5%;
       right: 30px;
-      transform: translateY(-50%);
+      // transform: translateY(-50%);
 
       @media (max-width: 1220px) {
         right: 15px;
@@ -383,6 +388,16 @@
         width: 9px;
         height: 9px;
       }
+    }
+
+    &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: 2;
     }
 
     &.wrapper-gallery-prev {
